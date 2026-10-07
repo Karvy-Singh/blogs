@@ -1,0 +1,2 @@
+# blogs
+blogs.karvys.dev
