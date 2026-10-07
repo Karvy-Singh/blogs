@@ -1,11 +1,20 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownItKatex = require("@vscode/markdown-it-katex").default;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.amendLibrary("md", (markdownLibrary) => {
+    markdownLibrary.use(markdownItKatex, {
+      throwOnError: false,
+      errorColor: "#9b341f"
+    });
+  });
 
   eleventyConfig.addPassthroughCopy({
     "styles.css": "styles.css",
-    "finalsidebar.png": "finalsidebar.png"
+    "finalsidebar.png": "finalsidebar.png",
+    "node_modules/katex/dist/katex.min.css": "katex/katex.min.css",
+    "node_modules/katex/dist/fonts": "katex/fonts"
   });
 
   const posts = (collectionApi) =>

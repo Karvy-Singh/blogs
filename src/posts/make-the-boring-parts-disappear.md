@@ -33,6 +33,16 @@ git status --short
 
 Nothing here is sophisticated. That is the point. A small, legible tool is easier to understand, easier to change, and easier to discard when it stops being useful.
 
+## A tiny equation
+
+Inline LaTeX works inside a sentence, such as $E = mc^2$.
+
+Display equations are centered on their own line:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$
+
 ## Keep the page quieter than the code
 
 Technical writing benefits from contrast, but not from constant decoration. The body text should feel almost book-like; code, notes, and links should be the moments where the visual system becomes more explicit.

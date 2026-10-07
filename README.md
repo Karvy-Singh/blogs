@@ -57,6 +57,24 @@ def greet(name: str) -> str:
 ```
 ````
 
+## LaTeX
+
+KaTeX renders mathematics during the build. Use single dollar signs for inline expressions:
+
+```md
+Einstein's equation is $E = mc^2$.
+```
+
+Use double dollar signs for a centered display equation:
+
+```md
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$
+```
+
+Escape literal currency delimiters as `\$` when needed.
+
 ## Develop
 
 ```sh

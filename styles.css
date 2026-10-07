@@ -304,6 +304,13 @@ li code {
 
 .token.entity { cursor: help; }
 
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
 ul {
   padding-left: 1.15rem;
 }
