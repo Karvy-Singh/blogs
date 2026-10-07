@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.categoryList
+  size: 1
+  alias: category
+permalink: "categories/{{ category | slugify }}/index.html"
+eleventyComputed:
+  title: "{{ category }} writings"
+  description: "Writing filed under {{ category }}."
+---
+<article class="post writing-index">
+  <h1>{{ category }}</h1>
+  {% set categoryPosts = collections.posts | postsForCategory(category) %}
+  <div class="writing-list">
+    {% for post in categoryPosts %}
+      <article>
+        <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</article>

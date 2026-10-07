@@ -203,7 +203,8 @@ h2 {
   letter-spacing: -0.025em;
 }
 
-.note {
+.note,
+blockquote {
   margin: 2rem 0;
   padding: 1rem 1.15rem 1rem 1.3rem;
   border-left: 3px solid var(--accent);
@@ -211,8 +212,13 @@ h2 {
   font-size: 0.97em;
 }
 
-.note strong {
+.note strong,
+blockquote strong {
   font-weight: 600;
+}
+
+blockquote p {
+  margin: 0;
 }
 
 pre {
@@ -273,6 +279,35 @@ li::marker {
 .recent-notes a {
   color: var(--ink);
   font-size: 1.15rem;
+}
+
+.writing-list {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.writing-list article {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.writing-list time {
+  color: var(--muted);
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+}
+
+.writing-list h2 {
+  margin: 0.45rem 0 0.6rem;
+}
+
+.writing-list h2 a {
+  text-decoration: none;
+}
+
+.writing-list p {
+  margin: 0;
 }
 
 .site-footer {
