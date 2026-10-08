@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "styles.css": "styles.css",
     "finalsidebar.png": "finalsidebar.png",
+    "src/images": "images",
     "node_modules/katex/dist/katex.min.css": "katex/katex.min.css",
     "node_modules/katex/dist/fonts": "katex/fonts"
   });

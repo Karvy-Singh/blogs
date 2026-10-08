@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Square sample illustration</title>
+  <desc id="desc">An abstract terminal window and geometric forms on an ochre background.</desc>
+  <rect width="800" height="800" fill="#d5ad1d"/>
+  <circle cx="654" cy="146" r="94" fill="#9b341f"/>
+  <rect x="96" y="112" width="506" height="576" rx="8" fill="#f4f0e7" stroke="#191a18" stroke-width="10"/>
+  <rect x="96" y="112" width="506" height="72" fill="#191a18"/>
+  <circle cx="137" cy="148" r="10" fill="#f4f0e7"/>
+  <circle cx="172" cy="148" r="10" fill="#9b341f"/>
+  <path d="M158 274h136M158 342h286M158 410h220M158 478h318" fill="none" stroke="#191a18" stroke-width="16" stroke-linecap="round"/>
+  <path d="m478 556 54 38-54 38" fill="none" stroke="#9b341f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

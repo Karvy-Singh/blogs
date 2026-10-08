@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="960" viewBox="0 0 720 960" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait sample illustration</title>
+  <desc id="desc">A vertical arrangement of connected circles and handwritten lines.</desc>
+  <rect width="720" height="960" fill="#ebe4d6"/>
+  <path d="M360 92v776" stroke="#191a18" stroke-width="8" stroke-dasharray="12 20"/>
+  <circle cx="360" cy="190" r="108" fill="#9b341f"/>
+  <circle cx="360" cy="480" r="132" fill="#d5ad1d" stroke="#191a18" stroke-width="10"/>
+  <circle cx="360" cy="770" r="86" fill="#191a18"/>
+  <path d="M94 330h176M450 330h176M90 634h194M436 634h194" stroke="#191a18" stroke-width="12" stroke-linecap="round"/>
+  <path d="m310 470 34 34 68-82" fill="none" stroke="#f4f0e7" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M328 770h64" stroke="#f4f0e7" stroke-width="14" stroke-linecap="round"/>
+</svg>

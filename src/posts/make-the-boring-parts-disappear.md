@@ -43,6 +43,25 @@ $$
 \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
 $$
 
+## Images at any shape
+
+Images retain their natural proportions and stay centered within the article.
+
+<figure>
+  <img src="/images/sample-square.svg" alt="Square abstract terminal illustration" loading="lazy" decoding="async">
+  <figcaption>Square image, 1:1</figcaption>
+</figure>
+
+<figure>
+  <img src="/images/sample-portrait.svg" alt="Portrait abstract diagram illustration" loading="lazy" decoding="async">
+  <figcaption>Vertical image, 3:4</figcaption>
+</figure>
+
+<figure>
+  <img src="/images/sample-landscape.svg" alt="Landscape abstract code graph illustration" loading="lazy" decoding="async">
+  <figcaption>Horizontal image, 16:9</figcaption>
+</figure>
+
 ## Keep the page quieter than the code
 
 Technical writing benefits from contrast, but not from constant decoration. The body text should feel almost book-like; code, notes, and links should be the moments where the visual system becomes more explicit.
