@@ -1,7 +1,12 @@
+const fs = require("node:fs");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownItKatex = require("@vscode/markdown-it-katex").default;
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.on("eleventy.before", () => {
+    fs.rmSync("_site", { recursive: true, force: true });
+  });
+
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.amendLibrary("md", (markdownLibrary) => {
     markdownLibrary.use(markdownItKatex, {
@@ -21,7 +26,7 @@ module.exports = function (eleventyConfig) {
 
   const posts = (collectionApi) =>
     collectionApi
-      .getFilteredByGlob("src/posts/*.md")
+      .getFilteredByGlob("src/posts/**/*.md")
       .sort((a, b) => b.date - a.date);
 
   eleventyConfig.addCollection("posts", posts);

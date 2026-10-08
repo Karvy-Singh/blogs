@@ -1,5 +1,6 @@
 ---
 title: Make the boring parts disappear
+slug: sample_blog_str
 description: A small pattern for turning repetitive developer work into a quiet, dependable workflow.
 date: 2026-10-06
 categories:

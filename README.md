@@ -4,11 +4,18 @@ An Eleventy blog that turns Markdown files into the styled pages used by `blogs.
 
 ## Write a post
 
-Create a Markdown file in `src/posts/`:
+Create one directory per post, with its content in `index.md`:
+
+```text
+src/posts/my-blog-name/index.md
+```
+
+Add a unique `slug`. It becomes the public URL:
 
 ````md
 ---
 title: My new note
+slug: my-blog-name
 description: A short summary used on indexes and in RSS.
 date: 2026-10-07
 categories:
@@ -26,6 +33,14 @@ Write the article here.
 echo "Fenced blocks become code areas"
 ```
 ````
+
+This example is generated at:
+
+```text
+https://blogs.karvys.dev/my-blog-name/
+```
+
+Use lowercase URL-safe slugs. Hyphens are recommended for public posts.
 
 The two links under “More...” prioritize recent posts sharing any category with the current note, then fall back to the two most recent posts globally.
 
@@ -77,6 +92,20 @@ $$
 
 Escape literal currency delimiters as `\$` when needed.
 
+## Images
+
+Store images under a matching directory in `src/images/`:
+
+```text
+src/images/my-blog-name/diagram.webp
+```
+
+Reference them from Markdown:
+
+```md
+![Diagram description](/images/my-blog-name/diagram.webp)
+```
+
 ## Develop
 
 ```sh
@@ -93,3 +122,17 @@ npm run build
 ```
 
 The generated site is written to `_site/`.
+
+## Cloudflare Pages
+
+Connect the repository in Cloudflare Pages with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Eleventy |
+| Production branch | `main` |
+| Build command | `npm run build` |
+| Build output directory | `_site` |
+| Root directory | Leave blank |
+
+After the first deployment, add `blogs.karvys.dev` under the Pages project's **Custom domains** settings.
