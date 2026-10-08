@@ -48,6 +48,8 @@ Add the language name after the opening fence. Prism highlighting is available f
 | TypeScript | `ts` or `typescript` |
 | Shell | `sh` or `bash` |
 
+Every fenced code block displays its language and includes a button that copies the complete block to the clipboard.
+
 For example:
 
 ````md

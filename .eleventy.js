@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
     "styles.css": "styles.css",
     "finalsidebar.png": "finalsidebar.png",
     "src/images": "images",
+    "src/scripts": "scripts",
     "node_modules/katex/dist/katex.min.css": "katex/katex.min.css",
     "node_modules/katex/dist/fonts": "katex/fonts"
   });
