@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="{{ description or site.description }}" />
   <title>{{ title }} — {{ site.name }}</title>
+  <script>
+    try {
+      const theme = localStorage.getItem("color-theme");
+      if (["rose", "sage", "mist", "lilac"].includes(theme)) document.documentElement.dataset.theme = theme;
+    } catch {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="/finalsidebar.png" as="image" fetchpriority="high">
@@ -21,9 +27,21 @@
     <header class="site-header">
       <a class="wordmark" href="{{ site.url }}">{{ site.name }}</a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="/rss.xml">RSS</a>
-        <a href="https://karvys.dev">About</a>
-        <a href="/">All writings</a>
+        <a href="/rss.xml">rss</a>
+        <a href="https://karvys.dev">about</a>
+        <a href="/">all writings</a>
+        <details class="theme-picker">
+          <summary aria-label="Choose color theme" title="Choose color theme">
+            <span class="theme-current" aria-hidden="true"></span>
+          </summary>
+          <div class="theme-options" aria-label="Color themes">
+            <button class="theme-option" type="button" data-theme="parchment" style="--swatch: #9b341f" aria-label="Parchment theme"></button>
+            <button class="theme-option" type="button" data-theme="rose" style="--swatch: #c42f5c" aria-label="Berry theme"></button>
+            <button class="theme-option" type="button" data-theme="sage" style="--swatch: #147a55" aria-label="Mint theme"></button>
+            <button class="theme-option" type="button" data-theme="mist" style="--swatch: #3864c8" aria-label="Periwinkle theme"></button>
+            <button class="theme-option" type="button" data-theme="lilac" style="--swatch: #7b45b1" aria-label="Lilac theme"></button>
+          </div>
+        </details>
       </nav>
     </header>
 
@@ -33,10 +51,11 @@
 
     <footer class="site-footer">
       <span>© {{ site.year }} {{ site.author }}</span>
-      <span>Built with curiosity</span>
+      <span>built with curiosity</span>
     </footer>
   </div>
   <script src="/scripts/code-blocks.js"></script>
+  <script src="/scripts/theme-picker.js"></script>
   <script src="/scripts/navigation.js"></script>
 </body>
 </html>
