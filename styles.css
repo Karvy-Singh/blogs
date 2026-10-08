@@ -80,6 +80,56 @@ html {
   background: var(--paper);
 }
 
+html.has-custom-scrollbar {
+  scrollbar-width: none;
+}
+
+html.has-custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.page-scrollbar {
+  position: fixed;
+  z-index: 100;
+  top: 24px;
+  right: 8px;
+  bottom: 24px;
+  width: 16px;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--rule) 70%, transparent);
+  touch-action: none;
+}
+
+.page-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  left: 3px;
+  min-height: 48px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 82%, var(--muted));
+  cursor: grab;
+}
+
+.page-scrollbar-thumb:hover,
+.page-scrollbar-thumb:focus-visible {
+  background: var(--accent);
+}
+
+.page-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
+.page-scrollbar-thumb:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: -6px;
+}
+
+.page-scrollbar[hidden] {
+  display: none;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -396,7 +446,31 @@ pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-weight: 400;
   line-height: 1.6;
+  scrollbar-color: color-mix(in srgb, var(--code-fg) 55%, transparent) var(--code-bg);
   tab-size: 2;
+}
+
+pre::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+pre::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-corner {
+  background: var(--code-bg);
+}
+
+pre::-webkit-scrollbar-track:horizontal {
+  margin-inline: 12px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  border-color: var(--code-bg);
+  background: color-mix(in srgb, var(--code-fg) 55%, transparent);
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--code-fg) 78%, transparent);
 }
 
 .code-block {
@@ -627,6 +701,16 @@ li::marker {
 
 @media (max-width: 620px) {
   body { font-size: 18px; }
+
+  .page-scrollbar {
+    right: 4px;
+    width: 16px;
+  }
+
+  .page-scrollbar-thumb {
+    right: 3px;
+    left: 3px;
+  }
 
   .site-header {
     align-items: flex-start;
