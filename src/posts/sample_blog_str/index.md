@@ -1,7 +1,7 @@
 ---
-title: Make the boring parts disappear
+title: Sample blog structure for testing element visibility
 slug: sample_blog_str
-description: A small pattern for turning repetitive developer work into a quiet, dependable workflow.
+description: A sample article for testing headings, notes, code, LaTeX, images, categories, and other blog elements.
 date: 2026-10-06
 categories:
   - workflow
