@@ -43,43 +43,48 @@ function fallbackCopy(text) {
   textarea.remove();
 }
 
-document.querySelectorAll('pre[class*="language-"]').forEach((pre) => {
-  const code = pre.querySelector("code");
-  if (!code || pre.parentElement.classList.contains("code-block")) return;
+function enhanceCodeBlocks(root = document) {
+  root.querySelectorAll('pre[class*="language-"]').forEach((pre) => {
+    const code = pre.querySelector("code");
+    if (!code || pre.parentElement.classList.contains("code-block")) return;
 
-  const language = getLanguage(pre, code);
-  const wrapper = document.createElement("div");
-  const toolbar = document.createElement("div");
-  const label = document.createElement("span");
-  const button = document.createElement("button");
+    const language = getLanguage(pre, code);
+    const wrapper = document.createElement("div");
+    const toolbar = document.createElement("div");
+    const label = document.createElement("span");
+    const button = document.createElement("button");
 
-  wrapper.className = "code-block";
-  toolbar.className = "code-toolbar";
-  label.className = "code-language";
-  label.textContent = languageNames[language] || language.toUpperCase();
-  button.className = "code-copy";
-  button.type = "button";
-  button.textContent = "Copy";
-  button.setAttribute("aria-label", `Copy ${label.textContent} code`);
+    wrapper.className = "code-block";
+    toolbar.className = "code-toolbar";
+    label.className = "code-language";
+    label.textContent = languageNames[language] || language.toUpperCase();
+    button.className = "code-copy";
+    button.type = "button";
+    button.textContent = "Copy";
+    button.setAttribute("aria-label", `Copy ${label.textContent} code`);
 
-  button.addEventListener("click", async () => {
-    try {
-      if (!navigator.clipboard || !window.isSecureContext) {
-        fallbackCopy(code.textContent);
-      } else {
-        await navigator.clipboard.writeText(code.textContent);
+    button.addEventListener("click", async () => {
+      try {
+        if (!navigator.clipboard || !window.isSecureContext) {
+          fallbackCopy(code.textContent);
+        } else {
+          await navigator.clipboard.writeText(code.textContent);
+        }
+
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1600);
+      } catch {
+        button.textContent = "Copy failed";
       }
+    });
 
-      button.textContent = "Copied";
-      window.setTimeout(() => {
-        button.textContent = "Copy";
-      }, 1600);
-    } catch {
-      button.textContent = "Copy failed";
-    }
+    toolbar.append(label, button);
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.append(toolbar, pre);
   });
+}
 
-  toolbar.append(label, button);
-  pre.parentNode.insertBefore(wrapper, pre);
-  wrapper.append(toolbar, pre);
-});
+window.enhanceCodeBlocks = enhanceCodeBlocks;
+enhanceCodeBlocks();

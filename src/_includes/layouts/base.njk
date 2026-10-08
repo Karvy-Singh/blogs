@@ -7,13 +7,14 @@
   <title>{{ title }} — {{ site.name }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/finalsidebar.png" as="image" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Petit+Formal+Script&family=Playwrite+CA:wght@100..400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/katex/katex.min.css" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <aside class="visual-rail" aria-label="Visual identity collage">
-    <img src="/finalsidebar.png" alt="A collage of Karvy's programming tools" />
+    <img src="/finalsidebar.png" alt="A collage of Karvy's programming tools" width="602" height="1999" fetchpriority="high" />
   </aside>
 
   <div class="page-shell">
@@ -36,5 +37,6 @@
     </footer>
   </div>
   <script src="/scripts/code-blocks.js"></script>
+  <script src="/scripts/navigation.js"></script>
 </body>
 </html>
