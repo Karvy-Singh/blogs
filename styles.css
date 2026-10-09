@@ -176,10 +176,14 @@ a:hover {
   box-shadow: inset -20px 0 34px -30px rgba(0, 0, 0, 0.55);
 }
 
+.visual-rail picture,
 .visual-rail img {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.visual-rail img {
   object-fit: cover;
   object-position: 50% 48%;
 }
@@ -335,7 +339,7 @@ h1 {
   margin: 0;
   font-size: clamp(2.4rem, 4.5vw, 4.25rem);
   font-weight: 500;
-  line-height: 1.16;
+  line-height: 1.3;
   letter-spacing: -0.02em;
 }
 
@@ -676,13 +680,15 @@ li::marker {
   .visual-rail {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: auto;
+    aspect-ratio: 1999 / 608;
     border-right: 0;
     border-bottom: 1px solid rgba(25, 26, 24, 0.12);
   }
 
   .visual-rail img {
-    object-position: center 34%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .page-shell {

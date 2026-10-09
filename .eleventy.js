@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "styles.css": "styles.css",
     "finalsidebar.png": "finalsidebar.png",
+    "blogs sidebar horizontal.png": "sidebar-horizontal.png",
     "src/images": "images",
     "src/scripts": "scripts",
     "node_modules/katex/dist/katex.min.css": "katex/katex.min.css",
