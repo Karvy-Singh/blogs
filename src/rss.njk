@@ -3,19 +3,30 @@ permalink: rss.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name }}</title>
+    <title>{{ site.name | escape }}</title>
     <link>{{ site.url }}</link>
-    <description>{{ site.description }}</description>
-    <language>en</language>
+    <description>{{ site.description | escape }}</description>
+    <language>en-us</language>
+    <atom:link href="{{ '/rss.xml' | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml" />
+    <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
     {% for post in collections.posts %}
+      {% set postUrl = post.url | absoluteUrl(site.url) %}
       <item>
         <title>{{ post.data.title | escape }}</title>
-        <link>{{ post.url | absoluteUrl(site.url) }}</link>
-        <guid>{{ post.url | absoluteUrl(site.url) }}</guid>
-        <pubDate>{{ post.date | rfcDate }}</pubDate>
+        <link>{{ postUrl }}</link>
+        <guid isPermaLink="true">{{ postUrl }}</guid>
+        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+        <dc:creator>{{ site.author | escape }}</dc:creator>
+        {% for category in post.data.categories or [] %}
+          <category>{{ category | escape }}</category>
+        {% endfor %}
         <description>{{ post.data.description | escape }}</description>
+        <content:encoded>{{ post.content | htmlToAbsoluteUrls(postUrl) | escape }}</content:encoded>
       </item>
     {% endfor %}
   </channel>

@@ -1,4 +1,5 @@
 const fs = require("node:fs");
+const rssPlugin = require("@11ty/eleventy-plugin-rss").default;
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownItKatex = require("@vscode/markdown-it-katex").default;
 
@@ -7,6 +8,7 @@ module.exports = function (eleventyConfig) {
     fs.rmSync("_site", { recursive: true, force: true });
   });
 
+  eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.amendLibrary("md", (markdownLibrary) => {
     markdownLibrary.use(markdownItKatex, {
