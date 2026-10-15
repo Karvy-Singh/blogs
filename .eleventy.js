@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "styles.css": "styles.css",
+    "karvy-wordmark.ico": "karvy-wordmark.ico",
     "finalsidebar.png": "finalsidebar.png",
     "blogs sidebar horizontal.png": "sidebar-horizontal.png",
     "src/images": "images",
