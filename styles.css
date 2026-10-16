@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Playwrite CA";
+  font-style: normal;
+  font-weight: 100 400;
+  font-display: swap;
+  src: url("/fonts/PlaywriteCA.ttf") format("truetype");
+}
+
 :root {
   --paper: #f4f0e7;
   --paper-deep: #ebe4d6;
@@ -324,6 +332,7 @@ main {
 
 h1, h2 {
   font-family: var(--font-heading);
+  font-feature-settings: "ss19" 1;
   font-weight: 300;
   text-wrap: balance;
 }

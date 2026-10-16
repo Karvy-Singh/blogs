@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
     "karvy-wordmark.ico": "karvy-wordmark.ico",
     "finalsidebar.png": "finalsidebar.png",
     "blogs sidebar horizontal.png": "sidebar-horizontal.png",
+    "src/fonts": "fonts",
     "src/images": "images",
     "src/scripts": "scripts",
     "node_modules/katex/dist/katex.min.css": "katex/katex.min.css",
