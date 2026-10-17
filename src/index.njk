@@ -6,9 +6,23 @@ permalink: index.html
 ---
 <article class="post writing-index">
   <h1>All writings</h1>
+  <section class="writing-filters" aria-label="Filter writings" hidden>
+    <div class="writing-filter-fields">
+      <details class="topic-filter">
+        <summary aria-label="Filter by topic"><span>All topics</span></summary>
+        <div class="topic-options" role="listbox" aria-label="Topics">
+          <button type="button" role="option" data-category="all" aria-selected="true">All topics</button>
+          {% for category in collections.categoryList %}
+            <button type="button" role="option" data-category="{{ category }}" aria-selected="false">{{ category }}</button>
+          {% endfor %}
+        </div>
+      </details>
+      <input id="writing-search" type="search" placeholder="Title or description" autocomplete="off" aria-label="Search by title or description" />
+    </div>
+  </section>
   <div class="writing-list">
     {% for post in collections.posts %}
-      <article>
+      <article data-categories="{{ post.data.categories | join('|') }}">
         <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
         <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
         {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}

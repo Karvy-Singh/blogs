@@ -134,6 +134,8 @@ And Similarly, other different types of Splines
 
 
 > This differentiates Polynomial Regression and a GAM with a Spline, because in the former, we use a **single** equation, that forms a curve, whereas the latter uses different equations combinedly, i.e. a **piecewise** function that forms a curve.
+Splines avoid the wild, erratic swinging (oscillations) that happen when you try to fit a single high-degree polynomial through too many data points. 
+
 
 Continuing with the Linear Spline transformations for simplicity:
 

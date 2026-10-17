@@ -54,6 +54,7 @@ async function navigate(url, pushState) {
 
     currentMain.replaceWith(nextMain);
     window.enhanceCodeBlocks?.(nextMain);
+    window.enhanceWritingIndex?.(nextMain);
 
     if (pushState) history.pushState({}, "", url);
     scrollToDestination(url);
