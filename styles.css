@@ -6,6 +6,14 @@
   src: url("/fonts/PlaywriteCA.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "NerdFontsSymbols";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2") format("woff2");
+}
+
 :root {
   --paper: #f4f0e7;
   --paper-deep: #ebe4d6;
@@ -729,6 +737,92 @@ li::marker {
   font-weight: 400;
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.social-links a,
+.discord-contact {
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  place-items: center;
+  color: var(--ink);
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: var(--accent);
+}
+
+.social-links a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.social-glyph {
+  font-family: "NerdFontsSymbols";
+  font-size: 1.35rem;
+  font-style: normal;
+  line-height: 1;
+}
+
+.discord-contact {
+  position: relative;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+}
+
+.discord-contact:hover,
+.discord-contact:focus-visible {
+  color: var(--accent);
+}
+
+.discord-contact:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.discord-contact::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  left: 50%;
+  z-index: 5;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--paper-deep);
+  font-family: var(--font-content);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.25rem);
+  transition: opacity 100ms ease, transform 100ms ease;
+  white-space: nowrap;
+}
+
+.discord-contact:hover::after,
+.discord-contact:focus-visible::after,
+.discord-contact.is-copied::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 @media (max-width: 900px) {
   :root { --sidebar-width: 0px; }
 
@@ -815,6 +909,10 @@ li::marker {
 
   .site-footer {
     flex-direction: column;
+  }
+
+  .social-links {
+    order: 3;
   }
 }
 
