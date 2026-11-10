@@ -1,4 +1,11 @@
-# How is Rich Text Format preserved while copy-pasting?
+---
+title: How is Rich Text Format preserved while copy-pasting
+slug: RTF_in_clipboards
+description: How browsers preserve rich text formatting when content is copied and pasted between applications.
+date: 2026-11-10
+categories:
+  - Under the Hood
+---
 
 So, if you ever copy some formatted text from a website, say, bold text, and paste it somewhere else, like maybe Google Docs or ChatGPT, you will notice that rich text formatting properties like bold text (or italics, underlining, etc.) are preserved.
 I witnessed this, and that ignited a spark of curiosity in me: how does this happen exactly?
