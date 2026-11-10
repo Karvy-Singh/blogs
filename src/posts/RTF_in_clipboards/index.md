@@ -35,16 +35,16 @@ Conceptually, the structure looks like this:
 ```text
 Document
    |
-   └── <p>
+   └── &lt;p&gt;
         |
         ├── Text("Hello ")
         |
-        ├── <strong>
+        ├── &lt;strong&gt;
         |      └── Text("World")
         |
         ├── Text("! This is ")
         |
-        ├── <em>
+        ├── &lt;em&gt;
         |      └── Text("important")
         |
         └── Text(".")
